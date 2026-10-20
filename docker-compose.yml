@@ -1,0 +1,12 @@
+services:
+  pairdrop:
+    image: lscr.io/linuxserver/pairdrop:latest
+    platform: linux/amd64
+    container_name: pairdrop
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Warsaw
+    ports:
+      - "8080:3000"  # PairDrop wewnątrz kontenera działa na porcie 3000
+    restart: unless-stopped
